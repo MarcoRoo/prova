@@ -1,0 +1,30 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AuthServService WSDL service -->
+
+  <service name="AuthServ" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://authser"/>
+      <parameter name="wsdlServiceElement" value="AuthServService"/>
+      <parameter name="schemaQualified" value="http://authser"/>
+      <parameter name="wsdlServicePort" value="AuthServ"/>
+      <parameter name="className" value="authser.AuthServSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="AuthServ"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="somma" qname="operNS:somma" xmlns:operNS="http://authser" returnQName="retNS:sommaReturn" xmlns:retNS="http://authser" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:x" xmlns:pns="http://authser" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:y" xmlns:pns="http://authser" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="somma"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;prova.java&apos; to &apos;ccde/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;aaa&apos;&#x0D;&#x0A;- Destination element: &apos;ccde/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;aaa.prova.java&apos;" description="Copy compilation unit" destination="=ccde/src\/main\/java" element1="/src\/main\/java&lt;aaa{prova.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1646427408693" units="1" version="1.0"/>
+</session>
